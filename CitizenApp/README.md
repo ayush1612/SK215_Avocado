@@ -1,6 +1,6 @@
-# citizen_app
+# Citizen App
 
-A new Flutter application.
+App for providing services to the citizen.
 
 ## Getting Started
 
