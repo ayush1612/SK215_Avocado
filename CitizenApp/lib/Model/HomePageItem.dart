@@ -21,12 +21,17 @@ List<HomePageItem> items = [
     routeId: "missing",
   ),
   const HomePageItem(
-      id: "3",
+    id: "3",
+    name: "NOC Application",
+    description: "Apply for NOC",
+  ),
+  const HomePageItem(
+      id: "4",
       name: "Instant Help",
       description: "Helpline numbers",
       routeId: "help"),
   const HomePageItem(
-      id: "4",
+      id: "5",
       name: "My Profile",
       description: "Visit your profile",
       routeId: "profile")
