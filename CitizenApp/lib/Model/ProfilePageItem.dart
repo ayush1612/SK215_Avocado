@@ -18,6 +18,10 @@ List<ProfilePageItem> items = [
     icon: "assets/img/mobileno.png",
   ),
   const ProfilePageItem(
+      heading: "Aadhaar Number.",
+      data: "121212121212",
+      icon: "assets/img/aadhaar.png"),
+  const ProfilePageItem(
     heading: "Email",
     data: "citizen@example.com",
     icon: "assets/img/email.png",
