@@ -42,21 +42,4 @@ flutter:
           weight: 400
 
   assets:
-    - assets/img/citizen-app.png
-    - assets/img/mobileno.png
-    - assets/img/name.png
-    - assets/img/city.png
-    - assets/img/email.png
-    - assets/img/pincode.png
-    - assets/img/state.png
-    - assets/img/100.png
-    - assets/img/child-1.png
-    - assets/img/domestic.png
-    - assets/img/emergency.png
-    - assets/img/senior.png
-    - assets/img/woman-1.png
-    - assets/img/woman-2.png
-    - assets/img/FIR4.png
-    - assets/img/FIRicon.png
-    - assets/img/missing.jpg
-    - assets/img/missing3.png
+    - assets/img/
