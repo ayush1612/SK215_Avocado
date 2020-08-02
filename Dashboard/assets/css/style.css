@@ -68,7 +68,7 @@ p{
   font-size: 14px;
 }
 #google_translate_element {
-  margin-top: 0px !important;
+  margin-top: 30px !important;
 }
 
 .sidebar {
@@ -76,7 +76,7 @@ p{
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 0px;
+  top: -15px;
   left: 0;
   background-color: whitesmoke;
   overflow-x: hidden;

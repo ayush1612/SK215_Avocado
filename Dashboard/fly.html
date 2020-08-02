@@ -29,7 +29,7 @@
 <body>
   <div id="map"></div>
   <div class="sidebar"></div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light app-header header-shadow">
     <a class="navbar-brand font-weight-bold text-secondary" href="index.html">
       <img class="navbar-brand" src="./assets/images/logo.png" height="40" alt="">
       Onduty</a>
@@ -37,7 +37,6 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -47,19 +46,18 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link font-weight-bold text-secondary" href="https://aman28.pythonanywhere.com"><i
+          <a class="nav-link text-danger" href="fly.html"><i class="fa fa-exclamation-triangle"
+              aria-hidden="true"></i>&nbsp<strong>Alerts</strong></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold text-secondary" href="http://aman28.pythonanywhere.com"><i
               class="nav-link-icon fa fa-id-card-o"></i>&nbspAdmin Dashboard</a>
         </li>&nbsp;
       </ul>
-      <div style="margin-top: 27px;" id="google_translate_element"></div>
+      <br>
+      <div style="margin-top: 29px;" id="google_translate_element"></div>
     </div>
   </nav>
-  <div id="menu">
-    <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked" />
-    <label for="streets-v11">streets</label>
-    <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
-    <label for="dark-v10">dark</label>
-  </div>
 
   <div id="mySidebar" class="sidebar">
     <div class="card-header">
@@ -93,9 +91,9 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg';
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v10',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [77.5649, 13.0305],
-      zoom: 13
+      zoom: 11
     });
     map.addControl(
       new MapboxDirections({
