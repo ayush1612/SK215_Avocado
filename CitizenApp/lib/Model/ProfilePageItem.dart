@@ -13,12 +13,12 @@ List<ProfilePageItem> items = [
     icon: "assets/img/name.png",
   ),
   const ProfilePageItem(
-    heading: "Mobile No.",
+    heading: "Mobile Number",
     data: "1234567890",
     icon: "assets/img/mobileno.png",
   ),
   const ProfilePageItem(
-      heading: "Aadhaar Number.",
+      heading: "Aadhaar Number",
       data: "121212121212",
       icon: "assets/img/aadhaar.png"),
   const ProfilePageItem(
