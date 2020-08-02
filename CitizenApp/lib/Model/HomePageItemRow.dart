@@ -12,7 +12,7 @@ class HomePageItemRow extends StatelessWidget {
       margin: new EdgeInsets.symmetric(vertical: 16.0),
       alignment: FractionalOffset.centerLeft,
       child: new Image(
-        image: new AssetImage("assets/img/citizen-app.png"),
+        image: new AssetImage(item.icon),
         height: 92.0,
         width: 92.0,
       ),
