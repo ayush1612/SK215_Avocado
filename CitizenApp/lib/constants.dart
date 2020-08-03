@@ -36,3 +36,14 @@ const kTextBoxDecoration = InputDecoration(
 //  border: OutlineInputBorder(),
   hintStyle: TextStyle(color: Colors.grey),
 );
+
+const kHeaderTextStyle = TextStyle(
+  fontSize: 18.0,
+  fontWeight: FontWeight.w600,
+  color: Colors.white,
+);
+
+const kSubHeaderTextStyle = TextStyle(
+  fontSize: 12.0,
+  color: Color(0xFFbbe1fa),
+);
