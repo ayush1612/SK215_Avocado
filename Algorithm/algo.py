@@ -6,8 +6,8 @@ from datetime import date
 import requests 
 import jsonify
 import random
-
-
+from TravellingSalesman import travellingSalesmanProblem
+random.seed(10)
 model = pickle.load(open('model.pkl', 'rb'))
 
 app = Flask(__name__)
@@ -40,7 +40,7 @@ def home():
 	return "hello"
 
 @app.route('/predict',methods=['GET'])
-def predict():
+def finddistance():
     from_ = request.args.get("from")
     to_ = request.args.get("to")
     # from_ = "mathikere"
@@ -85,5 +85,22 @@ def predict():
    
     return pat
 
+
+# @app.route('/predict',methods=['GET'])
+# def predict():
+#     first = "mathikere"
+#     second = "malleswaram"
+#     third = "hebbal"
+#     places = [first,second,third]
+#     distance = [[0 for i in range(3)] for j in range(3)]
+#     for i in range(0,3):
+#         for j in range(0,3):
+#             if distance[j][i]!=0:
+#                 distance[i][j] = distance[j][i]
+#             else:
+#                 distance[i][j] = finddistance(places[i],places[j])
+#     TravellingSalesMan(distance)
+
+            
 if __name__ == "__main__":
     app.run(debug=True)
