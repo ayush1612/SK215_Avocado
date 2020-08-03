@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask,request,jsonify,render_template
-import pickle
+
 import datetime
 from datetime import date
 import requests 
@@ -8,7 +8,7 @@ import jsonify
 import random
 from TravellingSalesman import travellingSalesmanProblem
 random.seed(10)
-model = pickle.load(open('model.pkl', 'rb'))
+# model = pickle.load(open('model.pkl', 'rb'))
 
 app = Flask(__name__)
 
@@ -60,8 +60,12 @@ def finddistance():
     print()
     coordinates = pat["geometry"]["coordinates"]
     # print(coordinates)
-    police_path = [from_,to_]
+    police_path = []
+    police_set = set()
+    police_set.add(from_)
+    police_set.add(to_)
     priority_sum = 0
+    
     print("Initial Distance = " + str(distance))
    
     print()
@@ -70,11 +74,14 @@ def finddistance():
     for i in coordinates:
         locality = reverse(i[0],i[1])
         locality = locality.lower()
-        if locality not in police_path:
+        if locality not in police_set:
             
             print(locality.ljust(30," ") + " " + str(priority(locality)))
             priority_sum = priority_sum + priority(locality)
-            police_path.append(locality)
+            police_path.append([locality,priority(locality)])
+            police_set.add(locality)
+
+        
 
     updated_distance = distance/priority_sum
     print()
@@ -83,7 +90,7 @@ def finddistance():
     
     # URL = "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/77.55623,13.03328;77.55597,13.04159;77.57162,13.04853?access_token=pk.eyJ1IjoidWp3YWxrcGwiLCJhIjoiY2tkYTdvZG1kMGJlMjJybXpvaHJ0NDRieiJ9.mx5YB4-2ZKCXsLzOpC--og"
    
-    return pat
+    return {"distance":distance,"police_path":police_path,"updated distace":updated_distance}
 
 
 # @app.route('/predict',methods=['GET'])
