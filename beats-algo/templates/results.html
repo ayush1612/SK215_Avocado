@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Thanks{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h1>Most Optimum path!</h1>
+    &nbsp;
+    <table class="table table-bordered">
+        <tr>
+          <th>Initial Distance</th>
+          <th>Updated Distance ( most optimum )</th>
+        </tr>
+        <tr>
+          <td>{{ distance }}</td>
+          <td>{{ updated_distance }}</td>
+        </tr>
+    </table>
+    &nbsp;
+    &nbsp;
+    <table class="table table-bordered">
+        <tr>
+          <th>Intermediate Place</th>
+          <th>Priority</th>
+        </tr>
+            {% for i in police_path %}
+                <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}
