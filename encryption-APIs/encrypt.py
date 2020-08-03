@@ -6,7 +6,7 @@ from os import listdir
 from os.path import isfile, join
 import time
 
-
+# AES encryptor to encrypt evidences and other police docs OnDuty
 class Encryptor:
     def __init__(self, key):
         self.key = key
