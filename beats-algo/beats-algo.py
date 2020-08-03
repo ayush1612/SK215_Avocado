@@ -74,15 +74,19 @@ def sign_up():
             to_ = last_name
             # from_ = "mathikere"
             # to_ = "malleshwaram"
-            from_cor = forward(from_)
-            from_cor_lat = from_cor["center"][0]
-            from_cor_long = from_cor["center"][1]
+            try:
+                from_cor = forward(from_)
+                from_cor_lat = from_cor["center"][0]
+                from_cor_long = from_cor["center"][1]
 
-            to_cor = forward(to_)
-            to_cor_lat = to_cor["center"][0]
-            to_cor_long = to_cor["center"][1]
+                to_cor = forward(to_)
+                to_cor_lat = to_cor["center"][0]
+                to_cor_long = to_cor["center"][1]
+                pat = path(from_cor_lat, from_cor_long, to_cor_lat, to_cor_long)
+            except:
+                return "Enter valid place name"
 
-            pat = path(from_cor_lat, from_cor_long, to_cor_lat, to_cor_long)
+            
             distance = pat["distance"]*0.001
             print()
             print("From " + from_+" to " + to_)
