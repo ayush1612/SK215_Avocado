@@ -32,3 +32,12 @@ def answer_call():
 
     return str(resp)
 
+
+@app.route('/gatherScheme', methods=['GET', 'POST'])
+def gatherScheme():
+
+    resp = VoiceResponse()
+
+    if 'Digits' in request.values:
+        # print(request.values)
+        choice = request.values['Digits']
