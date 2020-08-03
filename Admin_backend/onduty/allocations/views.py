@@ -11,32 +11,45 @@ from django.views.generic import CreateView
 from .forms import AllocationForm, PoliceForm, ZoneForm
 from police.models import polices
 from zones.models import zones
+from twilio.rest import Client                        
 
 # Create your views here.
 
 
 def dashboard(request):
-    if request.method == 'POST':
-        a_form = AllocationForm(request.POST)
-        p_form = PoliceForm(request.POST)
-        z_form = ZoneForm(request.POST)
-        if a_form.is_valid():
-        	a_form.save()
-        if p_form.is_valid():
-        	p_form.save()
-        if z_form.is_valid():
-        	z_form.save()
+	client = Client("<<>>", "<<>>")
+   	if request.method == 'POST':
+		a_form = AllocationForm(request.POST)
+		p_form = PoliceForm(request.POST)
+		z_form = ZoneForm(request.POST)
+		if a_form.is_valid():
+			a_form.save()
+				zone = a_form.cleaned_data.get('zone')
+				date = a_form.cleaned_data.get('date')
+				start_time = a_form.cleaned_data.get('start_time')
+				end_time = a_form.cleaned_data.get('end_time')
+				print(str(zone))
+				print(str(date))
+				print(str(start_time))
+				print(str(end_time))
+				body = "Schedule Update: \nArea: " + str(zone) + "\nDate: " + str(date) + "\nStart Time: " + str(start_time) + "\nEnd Time: " + str(end_time)
+				print(body)
+				client.messages.create(to="+917985091041", from_="+12055094439", body=body)
+		if p_form.is_valid():
+			p_form.save()
+		if z_form.is_valid():
+			z_form.save()
 
-    a_form = AllocationForm()
-    p_form = PoliceForm()
-    z_form = ZoneForm()
+	    a_form = AllocationForm()
+	    p_form = PoliceForm()
+	    z_form = ZoneForm()
 
-    context = {
-        'a_form': a_form,
-        'p_form': p_form,
-        'z_form': z_form,
-    }
-    return render(request, 'allocations/allocations.html', context)
+	    context = {
+		'a_form': a_form,
+		'p_form': p_form,
+		'z_form': z_form,
+	    }
+	    return render(request, 'allocations/allocations.html', context)
 
 
 class pcount(APIView):
