@@ -1,5 +1,5 @@
 async function forwardGeocoding(place) {
-    let response = await fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/" + place + ".json?access_token=pk.eyJ1IjoiaXNoYW5rNDciLCJhIjoiY2tibm8xbHF3MTc1ZDJycW55Znh6YWppdSJ9.zCHaLlcI36pxVctNkFZ5Sg")
+    let response = await fetch("https://api.mapbox.com/geocoding/v5/mapbox.places/" + place + ".json?access_token=GEOCODING ACCESS TOKEN HERE")
     let data = await response.json();
 
     return data['features'][0].center;
