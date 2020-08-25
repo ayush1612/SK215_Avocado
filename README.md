@@ -1,5 +1,5 @@
 
-# SIH 2020
+# SIH 2020 Winners
 
 # Problem Statement: SK215
 
